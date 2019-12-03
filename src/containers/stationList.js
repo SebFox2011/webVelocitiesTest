@@ -24,15 +24,14 @@ class StationList extends Component {
     }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(store) {
     return {
-        myStations:state.stations
+        myStations:store.stations
     }
 }
 
 function mapDispatchToProps(dispatch){
     return bindActionCreators({selectStation:selectStation},dispatch)
 }
-
 
 export default connect(mapStateToProps,mapDispatchToProps)(StationList);
