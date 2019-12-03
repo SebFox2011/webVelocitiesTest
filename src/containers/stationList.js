@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {selectStation} from "../actions/index";
+import {selectStation,fetchStations} from "../actions/index";
 import {bindActionCreators} from "redux";
 
 class StationList extends Component {
@@ -30,8 +30,7 @@ function mapStateToProps(store) {
     }
 }
 
-function mapDispatchToProps(dispatch){
-    return bindActionCreators({selectStation:selectStation},dispatch)
-}
+const mapDispatchToProps = {selectStation};
+//const mapDispatchToProps = {fetchStations};
 
 export default connect(mapStateToProps,mapDispatchToProps)(StationList);
