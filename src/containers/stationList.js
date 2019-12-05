@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {selectStation,fetchStations} from "../actions/index";
+import {fetchStations} from "../actions/index";
 import {bindActionCreators} from "redux";
 
 class StationList extends Component {
+    componentWillMount() {
+        this.props.fetchStations();
+    }
     render() {
         return (
             <div>
@@ -30,7 +33,7 @@ function mapStateToProps(store) {
     }
 }
 
-const mapDispatchToProps = {selectStation};
+const mapDispatchToProps = {fetchStations};
 //const mapDispatchToProps = {fetchStations};
 
 export default connect(mapStateToProps,mapDispatchToProps)(StationList);

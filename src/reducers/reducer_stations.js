@@ -13,14 +13,22 @@ export  function StationsReducer (){
     ]
 }
 
-export function StationsReducerAPI(state = initialState,action){
+export function StationsReducerAPI(stationsAPI = initialState,action){
     switch(action.type){
         case GET_STATIONS:
                 return{
-                    ...state,
-                  stations: action.payload
+                    ...stationsAPI,
+                  stations: getStationInfo(action.payload)
                 };
     }
-    return state;
+    return stationsAPI;
 
+}
+
+function getStationInfo(data) {
+    return data.map((station) => {
+        return {
+            name: station.name
+        }
+    })
 }
