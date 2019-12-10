@@ -6,10 +6,12 @@ import axios from "axios"
 import StationDetail from "./station_detail";
 import SearchCity from "./searchCity";
 
+const https = require('https');
+
 const API_END_POINT = "https://data.rennesmetropole.fr/api/records/1.0/search/?";
 const STATIONS = "dataset=etat-des-stations-le-velo-star-en-temps-reel&facet=nom" +
     "&facet=etat&facet=nombreemplacementsactuels&facet=nombreemplacementsdisponibles" +
-    "&facet=nombrevelosdisponibles&rows=54";
+    "&facet=nombrevelosdisponibles&rows=55";
 
 export default class App extends Component {
     constructor() {
