@@ -67,7 +67,7 @@ export default class App extends Component {
                     </div>
                 </div>
                 <div>
-                    <h2>Date et heure de requette: {this.state.heure.toLocaleTimeString()}</h2>
+                    <h2>Date et heure de requête: {this.state.heure.toLocaleTimeString()}</h2>
                     <p className="text-right m-0">
                         <a className="btn btn-primary"
                            onClick={()=>this.initStationsVelocities()}>
