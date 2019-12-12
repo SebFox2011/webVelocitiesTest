@@ -25,7 +25,7 @@ export default class App extends Component {
     }
 
     componentWillMount() {
-        this.initStations();
+        this.initStationsVelocities();
     }
 
     initStations() {
@@ -55,7 +55,6 @@ export default class App extends Component {
             else {
                 return <div className="spinner-border" role="status"><span className="sr-only">Loading...</span></div>
             }
-
         };
         return (
             <div>
@@ -66,10 +65,6 @@ export default class App extends Component {
                         <SearchBar/>
                         <SearchCity/>
                     </div>
-                </div>
-                <div>
-                    <StationList/>
-                    <StationDetail/>
                 </div>
                 <div>
                     <h2>Date et heure de requette: {this.state.heure.toLocaleTimeString()}</h2>

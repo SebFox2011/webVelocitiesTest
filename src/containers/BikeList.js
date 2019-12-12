@@ -13,7 +13,7 @@ class BikeList extends Component {
                     <div className="row mb-3">
                         {
                             this.props.stationList.map(station => {
-                                return <BikeListDetails key={station.fields.idstation} station={station}/>
+                                return <BikeListDetails key={station.idStation} station={station}/>
                             })
                         }
                     </div>
