@@ -19,9 +19,7 @@ export default function (cityReducer = initialState, action) {
 function getCityInfo(data) {
     return data.map((city) => {
         return {
-            name: city.name,
-            currencyCode: city.currencies[0].code,
-            flag:city.flag
+            name: city.name
         }
     })
 }

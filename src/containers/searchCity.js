@@ -14,7 +14,7 @@ class SearchCity extends Component {
             <select name="" id="">
                 {this.props.cities.map((city) => {
                     return (
-                        <option key={city.code} value={city.code}>
+                        <option key={city._id} value={city._id}>
                             {city.name}
                         </option>
 

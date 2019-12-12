@@ -13,6 +13,8 @@ const STATIONS = "dataset=etat-des-stations-le-velo-star-en-temps-reel&facet=nom
     "&facet=etat&facet=nombreemplacementsactuels&facet=nombreemplacementsdisponibles" +
     "&facet=nombrevelosdisponibles&rows=55";
 
+const API_VELOCIES ="http://localhost:8000/stations";
+
 export default class App extends Component {
     constructor() {
         super();
@@ -29,6 +31,16 @@ export default class App extends Component {
     initStations() {
         axios.get(`${API_END_POINT}${STATIONS}`).then((response) => {
             this.setState({stations: response.data.records});
+        });
+        this.setState({
+            heure:new Date()
+        });
+    }
+
+    initStationsVelocities() {
+        axios.get(`${API_VELOCIES}`).then((response) => {
+            this.setState({stations: response.data});
+            console.log(response.data)
         });
         this.setState({
             heure:new Date()
@@ -63,7 +75,7 @@ export default class App extends Component {
                     <h2>Date et heure de requette: {this.state.heure.toLocaleTimeString()}</h2>
                     <p className="text-right m-0">
                         <a className="btn btn-primary"
-                           onClick={()=>this.initStations()}>
+                           onClick={()=>this.initStationsVelocities()}>
                             <i className="far fa-circle"></i> Rafraichir</a>
                     </p>
                 </div>

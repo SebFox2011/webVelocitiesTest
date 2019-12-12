@@ -28,8 +28,9 @@ export function fetchStations() {
 
 export function getCities (){
     return function (dispatch){
-        axios.get("https://restcountries.eu/rest/v2/all")
+        axios.get("http://localhost:8000/cities")
             .then((response) => {
+                console.log(response.data);
                 dispatch({type:GET_CITIES,payload: response.data});
             });
     }
