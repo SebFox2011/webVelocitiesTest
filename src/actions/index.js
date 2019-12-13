@@ -28,7 +28,7 @@ export function fetchStations() {
 
 export function getCities (){
     return function (dispatch){
-        axios.get("http://localhost:8000/cities")
+        axios.get("http://92.167.212.55/cities")
             .then((response) => {
                 console.log(response.data);
                 dispatch({type:GET_CITIES,payload: response.data});

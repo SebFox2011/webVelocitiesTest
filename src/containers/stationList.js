@@ -33,6 +33,5 @@ function mapStateToProps(store) {
 }
 
 const mapDispatchToProps = {fetchStations};
-//const mapDispatchToProps = {fetchStations};
 
 export default connect(mapStateToProps,mapDispatchToProps)(StationList);

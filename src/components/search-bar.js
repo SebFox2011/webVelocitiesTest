@@ -26,9 +26,6 @@ class SearchBar extends Component {
     }
 
     handleChange(event){
-        /*console.log("------------------------");
-        console.log("Une saisie ",event.target.value)
-        console.log("------------------------");*/
         this.setState({searchText:event.target.value})
     }
 

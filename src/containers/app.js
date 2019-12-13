@@ -13,7 +13,7 @@ const STATIONS = "dataset=etat-des-stations-le-velo-star-en-temps-reel&facet=nom
     "&facet=etat&facet=nombreemplacementsactuels&facet=nombreemplacementsdisponibles" +
     "&facet=nombrevelosdisponibles&rows=55";
 
-const API_VELOCIES ="http://localhost:8000/stations";
+const API_VELOCIES ="http://92.167.212.55/stations";
 
 export default class App extends Component {
     constructor() {
